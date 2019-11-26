@@ -1,0 +1,8 @@
+.idea/
+lib/
+node_modules/
+coverage/
+.snapguidist/
+styleguide/
+stats.json
+.DS_Store

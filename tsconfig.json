@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "module": "commonjs",
+
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es6",
+    "outDir": "lib",
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "importHelpers": false,
+
+    "pretty": true,
+
+    "rootDir": "src",
+    "lib": ["es2016"]
+  },
+  "include": ["config/typings/*.d.ts", "src/**/*"],
+  "exclude": ["src/**/*.spec.ts", "node_modules/**/*", ]
+}

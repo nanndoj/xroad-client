@@ -1,0 +1,17 @@
+.idea/
+node_modules/
+src/
+coverage/
+config/
+*.command
+*.config.js
+stats.json
+tsconfig.json
+yarn-error.log
+.babelrc
+.eslintrc
+.gitignore
+.npmrc
+yarn.lock
+README.md
+package-lock.json
