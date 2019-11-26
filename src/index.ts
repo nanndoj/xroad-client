@@ -1,26 +1,10 @@
-import {IXRoadConfig} from "./types/IXRoadConfig";
-import {XRoadSoapClient} from "./clients/soap-client";
-import {XRoadRestClient} from "./clients/rest-client";
+import XRoad from "./xroad";
+export default XRoad ;
 
-export default class XRoad {
-
-    private soapClient: XRoadSoapClient;
-    private restClient: XRoadRestClient;
-
-    constructor(private config: IXRoadConfig) {}
-
-    getSoapClient = (): XRoadSoapClient => {
-        if(!this.soapClient) {
-            this.soapClient = new XRoadSoapClient(this.config);
-        }
-        return this.soapClient;
-    };
-
-    getRestClient = (): XRoadRestClient => {
-        if(!this.restClient) {
-            this.restClient = new XRoadRestClient(this.config);
-        }
-
-        return this.restClient;
-    }
-}
+export {IXRoadConfig} from "./types/IXRoadConfig";
+export {IXRoadRestRequest} from "./types/IXRoadRestRequest";
+export {IXRoadSoapRequest} from "./types/IXRoadSoapRequest";
+export {IXRoadClient} from "./types/IXRoadClient";
+export {IXRoadService} from "./types/IXRoadService";
+export {XRoadSoapClient} from "./clients/soap-client";
+export {XRoadRestClient} from "./clients/rest-client";
