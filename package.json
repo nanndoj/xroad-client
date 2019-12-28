@@ -40,8 +40,10 @@
     },
     "devDependencies": {
         "@types/core-js": "^0.9.36",
+        "@types/isomorphic-fetch": "0.0.35",
         "@types/jest": "^23.3.14",
         "@types/node": "^10.12.19",
+        "fetch-mock": "^8.2.1",
         "husky": "^1.3.1",
         "jest": "^24.8.0",
         "lint-staged": "^8.1.4",
@@ -53,6 +55,7 @@
     "peerDependencies": {},
     "dependencies": {
         "fast-xml-parser": "^3.12.20",
+        "isomorphic-fetch": "^2.2.1",
         "request": "^2.88.0",
         "soap": "^0.29.0"
     }

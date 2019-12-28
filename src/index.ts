@@ -1,3 +1,5 @@
+import "isomorphic-fetch";
+
 import XRoad from "./xroad";
 export default XRoad ;
 

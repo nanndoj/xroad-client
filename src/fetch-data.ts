@@ -1,26 +1,15 @@
-import request from "request";
+export const fetchData = (url: string, config: Record<string, any>) => {
+    return  fetch(url, config).then(res => {
+        if(res.status !== 200) {
+            return res.text().then(err => { throw err });
+        }
 
-export const fetchData = (url: string, config: {}) => {
-    return new Promise((resolve, reject) => {
-        request(
-            {
-                url,
-                ...config
-            },
-            (error: Error, response: any, body: any) => {
-                if (error) return reject({ exception: 'ERROR', error: error });
+        const contentType = res.headers.get('content-type');
 
-                if (!response || response.statusCode !== 200)
-                    return reject({ exception: 'ERROR', error: body });
+        if(contentType && contentType.indexOf('application/json') !== -1) {
+            return res.json();
+        }
 
-                const contentType = response.caseless.get('Content-Type');
-
-                if(contentType && contentType.indexOf('json') >= 0) {
-                    return resolve(JSON.parse(body));
-                }
-
-                return resolve(body);
-            }
-        );
+        return res.text();
     });
 };
