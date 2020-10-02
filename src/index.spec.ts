@@ -23,6 +23,7 @@ const service: IXRoadService = {
     memberCode: '45678', // The provider member code
     subsystemCode: '8765', // The provider subsystem code
     serviceCode: `myVehicles`, // The service to be consumed
+    serviceVersion: 'v1',
 };
 
 // create the consumer instance
