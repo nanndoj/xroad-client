@@ -1,5 +1,6 @@
-import {IXRoadClient} from "./IXRoadClient";
+import { IXRoadClient } from './IXRoadClient';
 
 export interface IXRoadService extends IXRoadClient {
-    serviceCode: string
+    serviceCode: string;
+    serviceVersion: string;
 }
