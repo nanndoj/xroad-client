@@ -1,30 +1,32 @@
-import {XRoadClient} from "./client";
-import {fetchData} from "../fetch-data";
-import {IXRoadRestRequest} from "../types/IXRoadRestRequest";
-import {IXRoadService} from "../types/IXRoadService";
+import { XRoadClient } from './client';
+import { fetchData } from '../fetch-data';
+import { IXRoadRestRequest } from '../types/IXRoadRestRequest';
+import { IXRoadService } from '../types/IXRoadService';
+
+const DEFAULT_TIMEOUT = 300;
 
 export class XRoadRestClient extends XRoadClient<IXRoadRestRequest> {
-
     public request = (req: IXRoadRestRequest) => {
         return this.restRequest(req);
     };
 
     public restRequest = (req: IXRoadRestRequest): Promise<any> => {
-        const { service, headers, body, method, ...cleanProps } = req;
+        const { service, headers, body, method, timeout, ...cleanProps } = req;
         return fetchData(this.url(service), {
-            method: (method || 'GET'),
+            method: method || 'GET',
             headers: {
-                "Content-Type": 'application/json',
-                "x-road-client": this.clientHeader,
-                ...(headers || {})
+                'Content-Type': 'application/json',
+                'x-road-client': this.clientHeader,
+                ...(headers || {}),
             },
             agentOptions: this.agentOptions,
+            timeout: timeout || DEFAULT_TIMEOUT,
             body,
             ...cleanProps,
         });
     };
 
-   url(service: IXRoadService): string {
+    url(service: IXRoadService): string {
         return [
             this.securityServerUrl,
             'r1',
@@ -33,7 +35,7 @@ export class XRoadRestClient extends XRoadClient<IXRoadRestRequest> {
             service.memberCode,
             service.subsystemCode,
             service.serviceCode,
-        ].join('/')
+        ].join('/');
     }
 
     get clientHeader(): string {
@@ -41,7 +43,7 @@ export class XRoadRestClient extends XRoadClient<IXRoadRestRequest> {
             this.xRoadInstance,
             this.memberClass,
             this.memberCode,
-            this.subsystemCode
-        ].join('/')
+            this.subsystemCode,
+        ].join('/');
     }
 }
