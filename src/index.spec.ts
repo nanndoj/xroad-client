@@ -40,10 +40,7 @@ describe('X-Road Client Library', () => {
                 // Custom headers can be passed here
             },
             body: JSON.stringify({ test: 1 }),
-        };
-
-        const expectedResponse = {
-            test: 1,
+            timeout: 300000,
         };
 
         fetchMock.post(
@@ -84,6 +81,7 @@ describe('X-Road Client Library', () => {
                 // Custom headers can be passed here
             },
             body: JSON.stringify({ test: 1 }),
+            timeout: 300000,
         };
 
         const expectedResponse = {

@@ -1,7 +1,8 @@
-import {IXRoadService} from "./IXRoadService";
+import { IXRoadService } from './IXRoadService';
 
 export interface IXRoadRequest {
-    service: IXRoadService,
+    service: IXRoadService;
     headers?: Record<string, any>;
     body?: string;
+    timeout?: number;
 }
