@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.10](https://github.com/nanndoj/xroad-client/compare/v0.0.8...v0.0.10) (2024-11-08)
+
+### Bug Fixes
+
+-   xroad client ([#25](https://github.com/nanndoj/xroad-client/issues/25)) ([ff7791d](https://github.com/nanndoj/xroad-client/commit/ff7791d))
+
 ## [0.0.9](https://github.com/nanndoj/xroad-client/compare/v0.0.8...v0.0.9) (2024-11-08)
 
 ## [0.0.8](https://github.com/nanndoj/xroad-client/compare/v0.0.5...v0.0.8) (2020-05-10)
